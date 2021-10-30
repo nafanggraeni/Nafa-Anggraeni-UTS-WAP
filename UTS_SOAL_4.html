@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Saol 4</title>
+
+ <style>
+
+  form{
+   background:linear-gradient(rgb(235, 154, 228),rgb(180, 70, 138));
+   color: white;
+   padding: 15%;
+   margin:auto;
+  }
+ </style>
+
+</head>
+<body>
+
+ <form name="form" align="center">
+  <span>Angka 1</span>
+  <input id="angka1" type="text" name="angka1" size="3"><br><br>
+  <span>Angka 2</span>
+  <input id="angka2" type="text" name="angka2" size="3"><br> <br>
+  <ul style="margin-right: 15px;"
+    id="hasil"> 
+  </ul>
+
+  <input type="button" onclick="kali()" value="X">
+  <input type="button" onclick="bagi()" value="/">
+
+ </form>
+
+ <script>
+  
+  function kali(){
+    let input = document.getElementById("angka1").value
+    let input2 = document.getElementById("angka2").value
+    var text="hasil adalah : ";
+    var node = document.createElement("ul"); // Membuat cabang <ul>
+    var textnode = document.createTextNode(text+input*input2); // Memasukkan teks ke cabang
+    node.appendChild(textnode);
+    document.getElementById("hasil").appendChild(node)
+    document.getElementById("angka1").value = ""
+    document.getElementById("angka2").value = ""
+  }
+  function bagi(){
+    let input = document.getElementById("angka1").value
+    let input2 = document.getElementById("angka2").value
+    var node = document.createElement("ul"); // Membuat cabang <ul>
+    var textnode = document.createTextNode(input/input2); // Memasukkan teks ke cabang
+    node.appendChild(textnode);
+    document.getElementById("hasil").appendChild(node)
+    document.getElementById("angka1").value = ""
+    document.getElementById("angka2").value = ""
+
+  }
+
+ </script>
+</body>
+</html>
